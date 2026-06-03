@@ -37,4 +37,22 @@ public class ProductService {
     public Product findBySku(String sku) {
         return productRepository.findBySku(sku).orElseThrow(() -> new IllegalArgumentException("Product with SKU " + sku + " does not exist"));
     }
+
+    public Product update(Long id, Product product) {
+        Product existingProduct = productRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("Product with id " + id + " does not exist"));
+
+        existingProduct.setSku(product.getSku());
+        existingProduct.setName(product.getName());
+        existingProduct.setPrice(product.getPrice());
+
+        return productRepository.save(existingProduct);
+    }
+
+    public Product changeStatus(Long id) {
+        Product existingProduct = productRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("Product with id " + id + " does not exist"));
+
+        existingProduct.setIsActive(!existingProduct.getIsActive());
+
+        return productRepository.save(existingProduct);
+    }
 }
