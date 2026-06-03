@@ -6,7 +6,6 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 @Entity
@@ -25,9 +24,6 @@ public class Product {
 
     @Column(nullable = false)
     private String name;
-
-    @Column(nullable = false)
-    private BigDecimal price;
 
     @Column(name = "is_active", nullable = false)
     private Boolean isActive;

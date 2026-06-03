@@ -43,7 +43,6 @@ public class ProductService {
 
         existingProduct.setSku(product.getSku());
         existingProduct.setName(product.getName());
-        existingProduct.setPrice(product.getPrice());
 
         return productRepository.save(existingProduct);
     }

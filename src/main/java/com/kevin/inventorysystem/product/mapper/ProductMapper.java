@@ -16,7 +16,6 @@ public class ProductMapper {
         Product product = new Product();
         product.setSku(requestDto.sku());
         product.setName(requestDto.name());
-        product.setPrice(requestDto.price());
         return product;
     }
 
@@ -29,7 +28,6 @@ public class ProductMapper {
                 product.getId(),
                 product.getSku(),
                 product.getName(),
-                product.getPrice(),
                 product.getIsActive(),
                 product.getCreatedAt()
         );
