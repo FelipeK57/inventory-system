@@ -1,6 +1,6 @@
 package com.kevin.inventorysystem.product.controller;
 
-import com.kevin.inventorysystem.product.dto.ProductRequestDto;
+import com.kevin.inventorysystem.product.dto.ProductRequestDTO;
 import com.kevin.inventorysystem.product.dto.ProductResponseDTO;
 import com.kevin.inventorysystem.product.service.ProductService;
 import com.kevin.inventorysystem.product.entity.Product;
@@ -29,7 +29,7 @@ public class ProductController {
     public ResponseEntity<ProductResponseDTO> create(@io.swagger.v3.oas.annotations.parameters.RequestBody(
             description = "Product details",
             required = true
-    ) @RequestBody ProductRequestDto productRequestDto) {
+    ) @RequestBody ProductRequestDTO productRequestDto) {
         Product input = productMapper.toEntity(productRequestDto);
         Product product = productService.save(input);
         return ResponseEntity.status(HttpStatus.CREATED).body(productMapper.toResponseDto(product));
@@ -63,7 +63,7 @@ public class ProductController {
     public ResponseEntity<ProductResponseDTO> update(@io.swagger.v3.oas.annotations.parameters.RequestBody(
             description = "Updated product details",
             required = true
-    ) @RequestBody ProductRequestDto productRequestDto, @Parameter(description = "Product identifier", required = true) @RequestParam Long id) {
+    ) @RequestBody ProductRequestDTO productRequestDto, @Parameter(description = "Product identifier", required = true) @RequestParam Long id) {
         Product input = productMapper.toEntity(productRequestDto);
         Product product = productService.update(id, input);
         return ResponseEntity.status(HttpStatus.OK).body(productMapper.toResponseDto(product));

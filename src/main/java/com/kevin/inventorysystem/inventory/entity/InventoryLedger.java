@@ -23,9 +23,11 @@ public class InventoryLedger {
     @Column(name = "movement_type", nullable = false)
     private String movementType;
 
+    @Column(name = "quantity", nullable = false)
     private int quantity;
 
-    private BigDecimal unitPrice;
+    @Column(name = "unit_cost", nullable = false)
+    private BigDecimal unitCost;
 
     private String reference;
 

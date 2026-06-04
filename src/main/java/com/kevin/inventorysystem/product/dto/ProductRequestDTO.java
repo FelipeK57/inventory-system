@@ -1,6 +1,6 @@
 package com.kevin.inventorysystem.product.dto;
 
-public record ProductRequestDto(
+public record ProductRequestDTO(
         String sku,
         String name
 ) {

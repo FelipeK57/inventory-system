@@ -1,14 +1,14 @@
 package com.kevin.inventorysystem.product.mapper;
 
 import com.kevin.inventorysystem.product.entity.Product;
-import com.kevin.inventorysystem.product.dto.ProductRequestDto;
+import com.kevin.inventorysystem.product.dto.ProductRequestDTO;
 import com.kevin.inventorysystem.product.dto.ProductResponseDTO;
 import org.springframework.stereotype.Component;
 
 @Component
 public class ProductMapper {
 
-    public Product toEntity(ProductRequestDto requestDto) {
+    public Product toEntity(ProductRequestDTO requestDto) {
         if (requestDto == null) {
             return null;
         }
